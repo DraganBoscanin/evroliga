@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            box-sizing: border-box;
+            margin: 0;
+        }
+
+        #container {
+            display: grid;
+            grid-row: 1fr 3fr 6fr 1fr;
+            row-gap: 5px;
+        }
+
+
+        header {
+            display: grid;
+            grid-auto-flow: column;
+            height: 5rem;
+            background-color: rgb(128, 78, 78);
+            
+        }
+
+        header>img {
+            height: 3.75rem;
+
+            padding-top: 0.9375rem;
+            margin-left: 0.625rem;
+        }
+
+        #banner img {
+            width: 100%;
+            height: 100%;
+            border-top: 0.625rem solid white;
+
+        }
+
+        nav {
+            justify-self: end;
+            margin-right: 1.25rem;
+            align-self: center;
+
+        }
+
+        nav a {
+            padding-left: 0.9375rem;
+            text-decoration: none;
+            font-size: large;
+            color: black;
+
+
+        }
+
+        #container-3 {
+            display: grid;
+            grid-auto-flow: column;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 3.125rem 0.625rem;
+            justify-items: center;
+            background-color: rgb(128, 78, 78);
+            height: 100vh;
+            align-items: center;
+            border-top: 0.625rem solid white;
+
+        }
+
+        .box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 12.5rem;
+            width: 18.75rem;
+            border: 1px solid gainsboro;
+            border-radius: 0.625rem;
+            background-image: linear-gradient(rgba(141, 35, 35, 0.434) 50%, rgba(12, 10, 10, 0.5) 70%);
+            color: white;
+
+        }
+
+        footer {
+            background-color: rgb(220, 210, 210);
+            border: 1px solid lightgrey;
+            border-radius: 5px;
+            color: black;
+            margin: 0 5px 5px 5px;
+            text-align: center;
+        }
+
+        .box:hover {
+            transform: scale(1.1, 1.1);
+            box-shadow: 0.75rem -0.75rem 0.375rem rgba(114, 26, 26, 0.484);
+        }
+
+        nav a:hover {
+            color: white;
+        }
+
+        aside {
+            display: grid;
+            grid-auto-flow: column;
+            grid-template-columns: 6fr 2fr;
+            column-gap: 5px;
+           
+            background-color: rgba(255, 255, 255, 0.239);
+            margin: 5px;
+
+
+            border-bottom: 0.625rem solid white;
+        }
+
+        #prvi_aside {
+            display: flex;
+            flex-direction: column;
+            margin-left: 15px;
+            border: 1px solid lightgrey;
+            padding: 5px;
+
+
+        }
+
+
+        #prvi_aside img {
+            height: 32.5rem;
+        }
+
+        #prvi_aside h2 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-weight: 400;
+            text-align: center;
+            color: red;
+            background-color: black;
+            margin: 0;
+
+        }
+
+        #drugi_aside {
+            border: 1px solid lightgrey;
+            margin-right: 5px;
+        }
+
+        #drugi_aside h2 {
+            background-color: black;
+            margin-top: 5px;
+            font-weight: 400;
+            color: red;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            text-align: center;
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+
+
+
+        #mreze {
+            display: grid;
+            grid-auto-flow: column;
+            grid-template-columns: 1fr 1fr 1fr;
+            height: 10vh;
+            margin-left: 20px;
+            margin-right: 20px;
+            border: 2px solid lightgrey;
+            border-radius: 10px;
+            justify-items: center;
+            padding-top: 35px;
+
+        }
+
+        #mreze img {
+            height: 40px;
+        }
+
+        #tabela {
+
+            background-color: white;
+            margin-top: 100px;
+            margin-left: 24px;
+            
+            border: 1px solid black;
+            border-radius: 10px;
+        }
+
+        #tabela tr,
+        td,
+        th {
+            border: 1px dashed black;
+        }
+
+        #image_klubova img {
+            height: 120px;
+            margin-top: 100px;
+            padding: 5px;
+
+        }
+      
+        #bar{
+            height: 20px;
+            position: absolute;
+            right: 2.5rem;
+            top: 1.875rem;
+            display: none;
+           
+            
+        }
+        @media all and (min-width:368px) and (max-width:1200px){
+            #container{
+                display: grid;
+            }
+
+
+           
+         
+            #banner{
+                display: none;
+            }
+            #hed{
+                
+          
+                
+            }
+            #container-3{
+                display: flex;
+                flex-wrap: wrap;
+              
+                justify-content: space-around;
+               
+            }
+
+        }
+       
+    </style>
+</head>
+
+<body>
+    <a href="">
+        <img id="bar" src="./image/bars-solid.svg" alt="">
+    </a>
+    <div id="container">
+       
+
+        <header id="hed">
+            <img src="./image/EuroLeague_logo (1).png" alt="">
+            <nav id="menu_bar">
+                <a href="#container">Home</a>
+                <a href="#prvi_aside">News</a>
+                <a href="#contact">Contact</a>
+                <a href="#container-3">Video</a>
+            </nav>
+        </header>
+        <div id="banner">
+            <img src="./image/euroleague-basketball-1300.png" alt="">
+        </div>
+      
+           <section id="container-3">
+                <div class="box" id="box-1">
+                    <iframe src="https://www.youtube.com/embed/W4hLYr8BXRQ" title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe>
+                </div>
+                <div class="box" id="box-2">
+                    <iframe src="https://www.youtube.com/embed/fuXtUQBOSBw" title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe>
+                </div>
+                <div class="box" id="box-3"><iframe src="https://www.youtube.com/embed/rR-w04kkrK8"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe></div>
+                <div class="box" id="box-4"><iframe src="https://www.youtube.com/embed/imwLKZBua3M"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe></div>
+                <div class="box" id="box-5"><iframe src="https://www.youtube.com/embed/XVX_rEWN2JY"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe></div>
+                <div class="box" id="box-6"><iframe src="https://www.youtube.com/embed/en93qeG7K-4"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe></div>
+                <div class="box" id="box-7"><iframe src="https://www.youtube.com/embed/1ms62j274Aw"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe></div>
+                <div class="box" id="box-8"><iframe src="https://www.youtube.com/embed/hfdGUAhq0AU"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe></div>
+            </section>
+       
+            <aside>
+                <div id="prvi_aside">
+                    <h2>News</h2>
+                    <p><strong>PARTIZAN RAZBIO šampiona Evrope! Crno-bela rapsodija u Istanbulu: Top 8 nikad
+                            bliži</strong>
+                    </p>
+                    <img src="./image/efes'partizan.jpeg" alt="">
+                    <p>Košarkaši Partizana ostvarili su zlata vredan brejk u Istanbulu, gde je pred crno-belima pao
+                        turski
+                        velikan, Anadolu Efes - 84:97.
+
+                        Najefikasniji u redovima crno-belih bio je Kevin Panter sa 19 poena, a pratili su ga Džejms
+                        Naneli i
+                        Zek Ledej sa po 16 poena, jedan manje je dodao Matijas Lesor, dok je Aleksa Avramović upisao 14
+                        poena..
+
+                        Sa druge strane, u turskom sastavu istakao se Vil Klajburn sa 22 poena, a podršu je imao u
+                        Elajdži
+                        Brajantu sa 16 i Vasiliju Miciću sa 15 poena.</p>
+                    <p>Nakon 29 kola crno-beli se nalaze na skoru 16-13, dok je Efes na 14-15, što može u mnogome
+                        odrediti
+                        dalju borbu za plasman među osam najboljih ekipa na Starom kontinentu.</p>
+                    <img src="./image/efes.jpeg" alt="">
+                    <p>Partizan je danas savladao Efes i tako napravio veliki korak ka plasmanu u TOP 8 Evrolige. Po
+                        završetku utakmice svoje impresije nakog ogromnog trijumfa nad prvakom Evrope podelio je i
+                        sjajni
+                        francuski centar, Matijas Lesor.
+
+                        - Velika timska pobeda, drugi put ove nedelje smo pronašli način da se vratimo i pokazali
+                        karakter i
+                        da nikada ne odustajemo, 5-6 igrača sa 10 ili više poena, što znači da je bila timska pobeda,
+                        nismo
+                        zavisili od jednog igrača. Čestitke svima - kazao je Lesor.
+
+                        Velika je ovo bila pobeda i u smislu pomaka na tabeli u borbi za plej-of jer je u pitanju bio
+                        direktan rival za Top8.</p>
+
+
+
+
+                </div>
+                <div id="drugi_aside">
+                    <h2>Follow us</h2>
+                    <div id="mreze">
+                        <div><a href="https://www.facebook.com" target="_blank"><img src="./image/facebook-logo-2019.svg" alt="Facebook"></a></div>
+                        <div><a href="https://www.instagram.com" target="_blank"><img src="./image/instagram.svg" alt="Instagram" id="insta"></a></div>
+                        <div><a href="https://www.twitter.com" target="_blank"><img src="./image/twitter-circle.svg" alt="Twiter" id="twit"></a></div>
+                    </div>
+                    <div>
+
+                        <table id="tabela">
+
+                            <tr>
+                                <th>Tim</th>
+                                <th>OM</th>
+                                <th>P</th>
+                                <th>I</th>
+                                <th>UP</th>
+                                <th>Forma</th>
+                            </tr>
+                            <tr>
+                                <td>1.Olimpijakos</td>
+                                <td>29</td>
+                                <td>21</td>
+                                <td>8</td>
+                                <td>2455:2195</td>
+                                <td>P P P I P</td>
+                            </tr>
+                            <tr>
+                                <td>2.Real Madrid</td>
+                                <td>29</td>
+                                <td>20</td>
+                                <td>9</td>
+                                <td>2436:2255</td>
+                                <td>P I P I P</td>
+                            </tr>
+                            <tr>
+                                <td>3.Barselona</td>
+                                <td>29</td>
+                                <td>19</td>
+                                <td>10</td>
+                                <td>2313:2215</td>
+                                <td>P I I P P</td>
+                            </tr>
+                            <tr>
+                                <td>4.Monaco</td>
+                                <td>29</td>
+                                <td>19</td>
+                                <td>10</td>
+                                <td>2402:2335</td>
+                                <td>P P P P I</td>
+                            </tr>
+                            <tr>
+                                <td>5.Fenerbahce</td>
+                                <td>28</td>
+                                <td>17</td>
+                                <td>11</td>
+                                <td>2335:2237</td>
+                                <td>I P I P P</td>
+                            </tr>
+                            <tr>
+                                <td>6.Maccabi</td>
+                                <td>29</td>
+                                <td>16</td>
+                                <td>13</td>
+                                <td>2393:2376</td>
+                                <td>P P P I P</td>
+                            </tr>
+                            <tr>
+                                <td>7.Partizan</td>
+                                <td>29</td>
+                                <td>16</td>
+                                <td>13</td>
+                                <td>2432:2362</td>
+                                <td>P I P P I</td>
+                            </tr>
+                            <tr>
+                                <td>8.Basconia</td>
+                                <td>29</td>
+                                <td>15</td>
+                                <td>14</td>
+                                <td>2473:2420</td>
+                                <td>I I P P I</td>
+                            </tr>
+
+                        </table>
+                    </div>
+                    <div id="image_klubova">
+                        <img src="./image/541px-KK_Partizan_logo.svg.png" alt="">
+                        <img src="./image/Maccabi_Electra.png" alt="">
+                        <img src="./image/Olympiacos_BC_logo.svg.png" alt="">
+                        <img src="./image/real-madrid-logo-77A97A4A0E-seeklogo.com.png" alt="">
+                        <img src="./image/1200px-FCB.svg.png" alt="">
+                        <img src="./image/Монако.png" alt="">
+                        <img src="./image/FenerbahceLogo.png" alt="">
+                        <img src="./image/KK_Saski_Baskonija.png" alt="">
+                    </div>
+                </div>
+
+            </aside>
+    
+       
+            <footer id="contact">
+                <p>My Website|&copy2023Demo</p>
+              
+            </footer>
+    </div>
+    <script>
+       
+
+
+
+
+
+
+
+
+
+    </script>
+    
+</body>
+
+</html>

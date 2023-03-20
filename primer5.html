@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/leaflet.css">
+</head>
+<style>
+    #grid-container{
+        display: grid;
+       grid-auto-flow: column;
+       height: 200px;
+       grid-template-columns: 1fr 3fr;
+    }
+    #map{
+        height: 480px;
+    }
+</style>
+<body>
+    <div id="grid-container">
+        <div>
+            <h1>Karta Sveta</h1>
+            <p>Kontejner u kome se prikazuje mapa mora imati najmanju visinu od 480px</p>
+        </div>
+        <div>
+           <h1>Karta sa funkcijama</h1>
+           <p></p>
+        </div>
+    </div>
+    <div id="map"></div>
+    <div>
+        <button id="zoom">Set zoom to 5</button>
+        <button id="zoom-in">Zoom in</button>
+        <button id="zoom-out">Zoom out</button>
+        <button id="pan">Show Belgrade</button>
+        <button id="set-view">Show Sodolovci zoom level 13</button>
+        <button id="fly">Fly to Polihrono</button>
+    </div>
+    
+
+
+
+
+
+
+
+
+
+    <script src="./js/leaflet.js"></script>
+    <script>
+         var myMap = L.map("map");
+         myMap.setView([37.974, 23.72], 13);
+
+         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+         {
+             attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OenStreetMap</a> contributors'
+         }).addTo(myMap);
+
+
+          let buttons = document.getElementsByTagName("button")
+
+          for(i=0; i < buttons.length; i++){
+
+           
+            buttons[i].addEventListener("click", function(){
+                let id = this.id
+
+                switch(id){
+
+                    case "zoom":myMap.setZoom(5);
+                    break;
+                    case "zoom-in":myMap.zoomIn(1);
+                    break;
+                    case "zoom-out":myMap.zoomOut(1);
+                    break;
+                    case "pan":myMap.panTo([44.82556, 20.45112]);
+                    break;
+                    case "set-view":myMap.setView([45.39983, 18.62094],13);
+                    break;
+                    case "fly":myMap.flyTo([40.016667, 23.533333],15);
+                    braek;
+                }
+
+            })
+
+            
+
+
+          }
+ </script>
+</body>
+</html>
